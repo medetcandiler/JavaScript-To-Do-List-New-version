@@ -1,11 +1,55 @@
 *{
-    margin: 0px;
     padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
 html, body{
-    height: 100vh;
+    height: 100%;
+}
+#gallery{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 440px;
+    height: 200px;
+}
+#gallery img{
+    min-width: 0px;
+    flex: 1 1 10px;
+    object-fit: cover;
+    opacity: .5;
+    transition: .5s;
+}
+#gallery img:hover{
+    flex: 1 1 200px;
+    opacity: 1;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+ul li{
+    cursor: pointer;
+    background: #eee;
+    position: relative;
+    list-style-type: none;
+    padding: 12px 8px 12px 40px;
+    font-size: 18px;
+    transition: .2s;
+}
+ul li:nth-child(even){
+    background: #f9f9f9;
+}
+ul li:hover{
+    background: #ddd;
+}
+ul li.checked::before {
+    content: "";
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
 }
