@@ -74,17 +74,20 @@ ul li.checked::before{
     height: 15px;
     width: 7px;
 }
-.close{
+li>span{
     position: absolute;
     right: 0px;
     top: 0px;
     padding: 12px 16px;
 }
-.close:hover{
+li>span:hover{
     background-color: red;
     color: #ffff;
     border-radius: 5px;
 }
 #input{
     text-align: center;
+}
+#alert{
+    transition: opacity 1s;
 }
