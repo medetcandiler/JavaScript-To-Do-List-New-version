@@ -12,7 +12,7 @@ Merhaba, ben Medetcan, Aslen Makine Mühendisi olsam da bilgisayar, bilgisayar b
 ---
 Proje örnek görsel:
 
-![proje-örnek-sunum-gif](https://github.com/medetcandiler/My-to-do-list-project/blob/main/mytodolist.gif)
+![proje-örnek-sunum-gif](https://github.com/medetcandiler/JavaScript-To-Do-List-New-version/blob/main/New-to-do-list-project.gif)
 
 ---
 
