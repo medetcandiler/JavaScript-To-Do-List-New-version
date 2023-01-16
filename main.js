@@ -23,36 +23,70 @@ const BUTTON=document.querySelector('#button');
 const myDataArr=localStorage.getItem('item')? JSON.parse(localStorage.getItem('item')) : [];
 const alertDOM=document.querySelector('#alert')
 let toastDOM=document.querySelector('#toast')
-ulDOM.addEventListener('click', function(e) {
-    this.removeChild(e.target);
-  })
+let closeButton=document.querySelectorAll('li');
+let list = document.querySelector('ul');
+list.addEventListener('click', function(e) {
+  if (e.target.tagName === 'LI') {
+    e.target.classList.toggle('checked');
+  }
+}, false);
+
+
 function submitFnc(){
     if(inputDOM.value.length<4){
         alertDOM.innerHTML=ALERT('danger', 'Wrong Attempt', 'You need write something at least 5 character')
     }else {
-        addLi(inputDOM.value);
+        let newLi=document.createElement('li');
+        newLi.innerHTML=inputDOM.value;
+        ulDOM.appendChild(newLi)
         myDataArr.push(inputDOM.value);
         localStorage.setItem('item', JSON.stringify(myDataArr));
         alertDOM.innerHTML=ALERT('success', 'Conguratilations', 'Your request succesfully added to the list')
         inputDOM.value=''
+        let createSpan=document.createElement('span');
+        let text=document.createTextNode('\u00D7');
+        createSpan.appendChild(text);
+        createSpan.className='close'
+        newLi.appendChild(createSpan);
+        newLi.classList.add('rounded');
     }
+    for (let i=0; i < closeButton.length; i++) {
+        closeButton[i].addEventListener('click', function(e) {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+)}
 }
 
 BUTTON.addEventListener('click', (e)=>{
     if(inputDOM.value.length<4){
         alertDOM.innerHTML=ALERT('danger', 'Wrong Attempt', 'You need write something at least 5 character')
     }else {
-        addLi(inputDOM.value);
+        let newLi=document.createElement('li');
+        newLi.textContent=inputDOM.value;
+        ulDOM.appendChild(newLi);
         myDataArr.push(inputDOM.value);
         localStorage.setItem('item', JSON.stringify(myDataArr));
         alertDOM.innerHTML=ALERT('success', 'Conguratilations', 'Your request succesfully added to the list')
         inputDOM.value=''
+        let createSpan=document.createElement('span');
+        let text=document.createTextNode("\u00D7");
+        createSpan.appendChild(text);
+        createSpan.classList.add('close');
+        newLi.appendChild(createSpan);
+        newLi.classList.add('rounded');
     }
+    for (let i=0; i < closeButton.length; i++) {
+        closeButton[i].addEventListener('click', function(e) {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+)}
 })
-
-let addLi= (value)=>{
-    let newLi=document.createElement('li')
-    newLi.textContent= value
-    newLi.classList.add('rounded')
-    ulDOM.appendChild(newLi)
+for(let i=0; i<closeButton.length; i++){
+    createSpan=document.createElement('span');
+    let text=document.createTextNode("\u00D7");
+    createSpan.appendChild(text);
+    createSpan.classList.add('close');
+    closeButton[i].appendChild(createSpan)
 }
