@@ -53,5 +53,6 @@ BUTTON.addEventListener('click', (e)=>{
 let addLi= (value)=>{
     let newLi=document.createElement('li')
     newLi.textContent= value
+    newLi.classList.add('rounded')
     ulDOM.appendChild(newLi)
 }

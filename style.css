@@ -53,3 +53,6 @@ ul li.checked::before {
     height: 15px;
     width: 7px;
 }
+#input{
+    text-align: center;
+}
