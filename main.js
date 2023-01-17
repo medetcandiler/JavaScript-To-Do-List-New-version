@@ -22,7 +22,6 @@ const formDOM=document.querySelector('#form');
 const BUTTON=document.querySelector('#button');
 const myDataArr=localStorage.getItem('items')? JSON.parse(localStorage.getItem('items')) : [];
 const alertDOM=document.querySelector('#alert')
-let toastDOM=document.querySelector('#toast')
 
 //checked class toggle to the every list item 
 ulDOM.addEventListener('click', function(e) {
