@@ -18,37 +18,35 @@ const ALERT=(className='danger', title, message)=>
 // `
 const ulDOM=document.querySelector('#list');
 const inputDOM=document.querySelector("#input");
-const divDOM=document.querySelector('#form');
+const formDOM=document.querySelector('#form');
 const BUTTON=document.querySelector('#button');
-const myDataArr=localStorage.getItem('item')? JSON.parse(localStorage.getItem('item')) : [];
+const myDataArr=localStorage.getItem('items')? JSON.parse(localStorage.getItem('items')) : [];
 const alertDOM=document.querySelector('#alert')
 let toastDOM=document.querySelector('#toast')
-let closeButton=document.querySelectorAll('span');
-let list = document.querySelector('ul');
 
 //checked class toggle to the every list item 
-list.addEventListener('click', function(e) {
-  if (e.target.tagName === 'LI') {
+ulDOM.addEventListener('click', function(e) {
+  if (e.target.tagName == 'LI') {
     e.target.classList.toggle('checked');
   }
 }, false);
 
 //submit event with delete button and remove list item from list in one function
-divDOM.addEventListener('submit', function(e){
+formDOM.addEventListener('submit', function(e){
     e.preventDefault();
-    if(inputDOM.value.length<4){
+    if(inputDOM.value.length<5){
         alertDOM.innerHTML=ALERT('danger', 'Wrong Attempt', 'You need write something at least 5 character');
         setTimeout(()=>{
             alertDOM.innerHTML=''
-        },3000)
+        },1500)
     }else {
         let newLi=document.createElement('li');
         newLi.innerHTML=inputDOM.value;
         ulDOM.appendChild(newLi)
         myDataArr.push(inputDOM.value);
-        localStorage.setItem('item', JSON.stringify(myDataArr));
         alertDOM.innerHTML=ALERT('success', 'Conguratilations', 'Your request succesfully added to the list')
-        setTimeout(()=>alertDOM.innerHTML='',3000)
+        localStorage.setItem('items', JSON.stringify(myDataArr));
+        setTimeout(()=>alertDOM.innerHTML='',1500)
         inputDOM.value=''
         let deleteButton=document.createElement('span');
         let text=document.createTextNode('\u2715');
@@ -62,6 +60,4 @@ divDOM.addEventListener('submit', function(e){
         })
     }
 })
-
-
 
