@@ -7,9 +7,9 @@ const ALERT=(className='danger', title, message)=>
 `
 
 const itemAreaDOM=document.querySelector('#list');
-const inputDOM=document.querySelector("#input");
 const formDOM=document.querySelector('#form');
 const BUTTON=document.querySelector('#button');
+const item=document.querySelector('input')
 const alertDOM=document.querySelector('#alert')
 const dataArray=localStorage.getItem('myDataItems')? JSON.parse(localStorage.getItem('myDataItems')) : [];
 
@@ -20,8 +20,7 @@ itemAreaDOM.addEventListener('click', (e) => {
 })
 
 formDOM.addEventListener('submit', (e) => {
-    e.preventDefault()
-    let item=document.querySelector('input');
+    e.preventDefault();
     createList(item);
 })
 

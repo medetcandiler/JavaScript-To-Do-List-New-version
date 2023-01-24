@@ -35,7 +35,7 @@ nav:nth-child(odd){
 nav.checked{
     text-decoration: line-through;
     color: white;
-    background-color: darkslategrey;
+    background-color: dimgray;
 }
 
 .update-controller{
@@ -43,6 +43,7 @@ nav.checked{
 }
 span{
     padding-left: 2rem;
+    pointer-events: none;
 }
 .width{
     margin: auto;
