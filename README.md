@@ -13,7 +13,7 @@ Hello Everyone. Let me briefly introduce myself to you. First of all I am so gla
 ---
 Last version of the project:
 
-![proje-örnek-sunum-gif](https://github.com/medetcandiler/JavaScript-To-Do-List-New-version/blob/main/New-to-do-list-project.gif)
+![proje-örnek-sunum-gif](https://github.com/medetcandiler/JavaScript-To-Do-List-New-version/blob/main/last-version-of-project.gif)
 
 First version of the project( When you delete the to do list item the action do not delete localStorage data but I fixed it in the last version of the 
 project)
